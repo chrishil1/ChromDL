@@ -21,7 +21,7 @@ l2_reg = 5e-7
 noutputs = 919
 
 # Load test file
-y = loadmat('test.mat')
+y = loadmat('data/test.mat')
 testLabelMatrix = y['testdata']
 test_data_raw = y['testxdata']
 test_data = test_data_raw.transpose(0, 2, 1)
