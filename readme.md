@@ -48,7 +48,7 @@ ChromDL_train.py will train the model for the specified number of epochs using t
 ### Testing ChromDL
 `python ChromDL_test.py`
 
-ChromDL_test.py will run the fully trained model loaded from `ChromDL_best_weights` and calculate the performance metrics for auROC and auPRC. Alternatively, if you wish to calculate training metrics on a user trained model, run the following:
+ChromDL_test.py will run the fully trained model loaded from `ChromDL_best_weights` and calculate the performance metrics for auROC and auPRC, saving them to `test_out/ChromDL_test_metrics.txt`. Alternatively, if you wish to calculate training metrics on a user trained model, run the following:
 
 `python ChromDL_test.py <weight file>`
 
