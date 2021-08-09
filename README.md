@@ -35,6 +35,12 @@ The previously mentioned container.sif used as the docker image for training and
 The fully trained ChromDL weight files can be downloaded from:
 
 ### Training ChromDL
+`python ChromDL_train.py`
+ChromDL_train.py will train the model for the 100 epochs using a batch size of 500 and save results to `train_out/ChromDL_train_out.txt`, and the weights from the training to `train_out/ChromDL_learned_weights`
+
+Or, the user can input the number of epochs or change the batch size and run:
+`python ChromDL_train.py <batch size> <number of epochs>`
+ChromDL_train.py will train the model for the specified number of epochs using the inputted batch size and save results to `train_out/ChromDL_train_out.txt`, and the weights from the training to `train_out/ChromDL_learned_weights`
 
 ### Testing ChromDL
 
