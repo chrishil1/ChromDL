@@ -7,6 +7,11 @@ from sklearn.metrics import average_precision_score
 import sys
 import os
 
+if len(sys.argv) == 2:
+	weight_file = int(sys.argv[1])
+else:
+	weight_file = "ChromDL_best_weights"
+
 # Create output directory
 savedir = "test_out"
 try:
@@ -42,7 +47,7 @@ model = tf.keras.models.Sequential([
 ])
 
 # Load best model weights and calculate predictions
-model.load_weights("ChromDL_best_weights/variables/variables")
+model.load_weights(weight_file + "/variables/variables")
 model.compile(loss='binary_crossentropy', optimizer='ADAM', metrics=['accuracy'])
 print("Testing model...", model.evaluate(test_data, testLabelMatrix, batch_size=batchsize, verbose=2))
 predProbs = model.predict(test_data, batch_size=batchsize, verbose=2)
