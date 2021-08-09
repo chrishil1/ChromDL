@@ -46,6 +46,13 @@ Or, the user can input the number of epochs or change the batch size and run:
 ChromDL_train.py will train the model for the specified number of epochs using the inputted batch size and save results to `train_out/ChromDL_train_out.txt`, and the weights from the training to `train_out/ChromDL_learned_weights`
 
 ### Testing ChromDL
+`python ChromDL_test.py`
+
+ChromDL_test.py will run the fully trained model loaded from `ChromDL_best_weights` and calculate the performance metrics for auROC and auPRC. Alternatively, if you wish to calculate training metrics on a user trained model, run the following:
+
+`python ChromDL_test.py <weight file>`
+
+Where the weight file will be the `ChromDL_learned_weights` from training.
 
 ## Contact information
 For help or issues using ChromDL, please contact Chris Hill (chrishil@umich.edu).
