@@ -1,7 +1,7 @@
 # ChromDL: A next generation deep learning hybrid neural network for the prediction of Transcription Factor Binding Sites and DNase-I Hypersensitive Sites in the hg19 genome
 ChromDL is a hybrid neural network comprised of gated recurrent Units (GRUs), convolutional neural networks (CNNs), and long short-term memory units (LSTMs) for the prediction of TFBS and DHS using only DNA sequences as input.
 
-![model image](ChromDL_vis.png)
+![model image](chromDL_vis.png)
 
 Paper information: 
 
