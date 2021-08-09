@@ -1,0 +1,37 @@
+From: nvidia/cuda:11.0-cudnn8-runtime-ubuntu18.04
+
+################################################################################
+%labels
+################################################################################
+ChromDL - Container definition file
+
+################################################################################
+%post
+################################################################################
+
+###
+### install keras + tensorflow + other useful packages
+###
+apt-get update
+DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+apt-get install -y graphviz locales python3.7 python3-pip git pdb2pqr zlib1g-dev
+locale-gen en_US.UTF-8
+apt-get clean
+
+python3.7 -m pip install --upgrade pip
+python3.7 -m pip install https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-2.4.0-cp37-cp37m-manylinux2010_x86_64.whl
+python3.7 -m pip install h5py==2.10.0
+python3.7 -m pip install pandas==1.2.1
+python3.7 -m pip install scikit-learn==0.24.1
+python3.7 -m pip install scipy==1.6.0
+python3.7 -m pip install tensorflow-addons==0.12.1
+python3.7 -m pip install matplotlib==3.3.4
+python3.7 -m pip install numpy==1.19.5
+python3.7 -m pip install pandas==1.2.1
+python3.7 -m pip install sklearn==0.0
+
+################################################################################
+%environment
+################################################################################
+export PATH=/usr/local/sbin:/usr/sbin:/sbin:/bin:/usr/bin:/usr/local/bin:/usr/local/cuda/bin:
+export PYTHONPATH=/usr/share/pdb2pqr:
