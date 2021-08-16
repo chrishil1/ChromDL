@@ -29,7 +29,7 @@ The ChIP-seq and DNase-seq data that this model was trained on can be found in D
 The individual links for each of the 919 chromatin features labels can be found in `data/data_sources/DeepSEA_data_sources.txt`, and the other data sources used in the experimentation and validation of the model can be found in `data/data_sources/other_data_sources.txt`
 
 ### Container file
-The previously mentioned container.sif used as the docker image for training and testing ChromDL can be downloaded from:
+The previously mentioned container.sif used as the docker image for training and testing ChromDL can be downloaded from: https://drive.google.com/uc?id=1LHVtgATsO4n4WYCFdw46goFgjibCrjip&export=download
 
 ### Weight files
 The fully trained ChromDL weight files can be downloaded from:
