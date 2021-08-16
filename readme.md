@@ -33,6 +33,7 @@ The previously mentioned container.sif used as the docker image for training and
 
 ### Weight files
 The fully trained ChromDL weight files can be downloaded from:
+https://drive.google.com/drive/folders/1vWxdDRbn3v4oit5D9RiMxiR-vopYnj6w?usp=sharing
 
 ### Training ChromDL
 `python ChromDL_train.py`
