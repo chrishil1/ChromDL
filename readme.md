@@ -54,4 +54,4 @@ ChromDL_test.py will run the fully trained model loaded from `ChromDL_best_weigh
 Where the weight file will be the `ChromDL_learned_weights` from training.
 
 ## Contact information
-For help or issues using ChromDL, please contact Chris Hill (chrishil@umich.edu).
+For help or issues using ChromDL, please contact chrishil@umich.edu.
