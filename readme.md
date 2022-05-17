@@ -12,7 +12,7 @@ Included in this container are the following:
 - H5py (version 2.10.0)
 - Numpy (version 1.19.5)
 - Scikit-learn (version 0.24.1)
-- Scipy (version 1.6.0)
+- SciPy (version 1.6.0)
 - Sklearn (version 0.0)
 
 Also included in the container file for other file processing were:
