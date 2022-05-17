@@ -70,7 +70,7 @@ filepath = savedir + "/ChromDL_learned_weights"
 model.compile(loss='binary_crossentropy', optimizer='ADAM', metrics=['accuracy'])
 
 # Uncomment this line if loading previously trained weights
-#model.load_weights("ChromDL_train_out/ChromDL_learned_weights/variables/variables")
+# model.load_weights("ChromDL_train_out/ChromDL_learned_weights/variables/variables")
 checkpointer = tf.keras.callbacks.ModelCheckpoint(filepath=filepath, verbose=1, save_best_only=True)
 earlystopper = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=500, verbose=2)
 history = model.fit(train_data, trainLabelMatrix, epochs=num_epochs, batch_size=batchsize, shuffle=True, validation_data=(valid_data, validLabelMatrix), callbacks=[checkpointer, earlystopper], verbose=2)
