@@ -28,17 +28,17 @@ validLabelMatrix = f['validation_labels'][:]
 
 # ChromDL model definition
 chromDL = tf.keras.models.Sequential([
-			tf.keras.layers.Bidirectional(tf.keras.layers.GRU(128, return_sequences=True), input_shape=(1000,4)),
-			tf.keras.layers.SeparableConv1D(750, (16), activation='relu', kernel_regularizer=tf.keras.regularizers.l1_l2(l1=l1_reg, l2=l2_reg)),
-			tf.keras.layers.Convolution1D(360, (8), activation='relu', kernel_regularizer=tf.keras.regularizers.l1_l2(l1=l1_reg, l2=l2_reg)),
-			tf.keras.layers.MaxPooling1D(4),
-			tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(128, return_sequences=True)),
-			tf.keras.layers.Dropout(0.2),
-			tf.keras.layers.BatchNormalization(),
-			tf.keras.layers.AveragePooling1D(8),
-			tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(128, return_sequences=True)),
-			tf.keras.layers.Flatten(),
-			tf.keras.layers.Dense(noutputs, activation='sigmoid')
+	tf.keras.layers.Bidirectional(tf.keras.layers.GRU(128, return_sequences=True), input_shape=(1000,4)),
+	tf.keras.layers.SeparableConv1D(750, (16), activation='relu', kernel_regularizer=tf.keras.regularizers.l1_l2(l1=l1_reg, l2=l2_reg)),
+	tf.keras.layers.Convolution1D(360, (8), activation='relu', kernel_regularizer=tf.keras.regularizers.l1_l2(l1=l1_reg, l2=l2_reg)),
+	tf.keras.layers.MaxPooling1D(4),
+	tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(128, return_sequences=True)),
+	tf.keras.layers.Dropout(0.2),
+	tf.keras.layers.BatchNormalization(),
+	tf.keras.layers.AveragePooling1D(8),
+	tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(128, return_sequences=True)),
+	tf.keras.layers.Flatten(),
+	tf.keras.layers.Dense(noutputs, activation='sigmoid')
 ])
 
 chromDL.compile(loss='binary_crossentropy', optimizer='ADAM', metrics=['accuracy'])
@@ -59,21 +59,21 @@ print("New inputs Loaded")
 
 # Enhancer model definition
 enh_model = tf.keras.models.Sequential([
-			tf.keras.layers.Convolution1D(64, 9, activation='relu', input_shape=(919,1), kernel_regularizer=tf.keras.regularizers.l1_l2(l1=1e-4, l2=1e-3), kernel_constraint=max_norm(1)),
-			tf.keras.layers.BatchNormalization(),
-			tf.keras.layers.LeakyReLU(0),
-			tf.keras.layers.MaxPooling1D(9, 3),
-			tf.keras.layers.Dropout(0.2),
-			tf.keras.layers.Convolution1D(128, 4, activation='relu', kernel_regularizer=tf.keras.regularizers.l1_l2(l1=1e-4, l2=1e-3), kernel_constraint=max_norm(1)),
-			tf.keras.layers.LeakyReLU(0),
-			tf.keras.layers.MaxPooling1D(4, 2),
-			tf.keras.layers.Dropout(0.2),
-			tf.keras.layers.Convolution1D(256, 4, activation='relu', kernel_regularizer=tf.keras.regularizers.l1_l2(l1=1e-4, l2=1e-3),kernel_constraint=max_norm(1)),
-			tf.keras.layers.MaxPooling1D(4, 3),
-			tf.keras.layers.Dropout(0.5),
-			tf.keras.layers.Flatten(),
-			tf.keras.layers.Dense(180, activation='relu'),
-			tf.keras.layers.Dense(1, activation='sigmoid')
+	tf.keras.layers.Convolution1D(64, 9, activation='relu', input_shape=(919,1), kernel_regularizer=tf.keras.regularizers.l1_l2(l1=1e-4, l2=1e-3), kernel_constraint=max_norm(1)),
+	tf.keras.layers.BatchNormalization(),
+	tf.keras.layers.LeakyReLU(0),
+	tf.keras.layers.MaxPooling1D(9, 3),
+	tf.keras.layers.Dropout(0.2),
+	tf.keras.layers.Convolution1D(128, 4, activation='relu', kernel_regularizer=tf.keras.regularizers.l1_l2(l1=1e-4, l2=1e-3), kernel_constraint=max_norm(1)),
+	tf.keras.layers.LeakyReLU(0),
+	tf.keras.layers.MaxPooling1D(4, 2),
+	tf.keras.layers.Dropout(0.2),
+	tf.keras.layers.Convolution1D(256, 4, activation='relu', kernel_regularizer=tf.keras.regularizers.l1_l2(l1=1e-4, l2=1e-3),kernel_constraint=max_norm(1)),
+	tf.keras.layers.MaxPooling1D(4, 3),
+	tf.keras.layers.Dropout(0.5),
+	tf.keras.layers.Flatten(),
+	tf.keras.layers.Dense(180, activation='relu'),
+	tf.keras.layers.Dense(1, activation='sigmoid')
 ])
 
 enh_model.compile(loss='binary_crossentropy', optimizer='ADAM', metrics=['accuracy'])
