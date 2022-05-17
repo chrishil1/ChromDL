@@ -1,5 +1,5 @@
 # ChromDL: A Next-Generation Regulatory DNA Classifier
-ChromDL is a hybrid neural network comprised of bidirectional gated recurrent Units (GRUs), separable and traditional convolutional neural networks (CNNs), and bidirectional long short-term memory units (LSTMs) for the prediction of Transcription Factor Binding Sites, DNase-I hypersensitive sites, and Histone Modifications using only DNA sequences as input.
+ChromDL is a hybrid neural network comprised of bidirectional gated recurrent Units (biGRUs), separable and traditional convolutional neural networks (CNNs), and bidirectional long short-term memory units (biLSTMs) for the prediction of Transcription Factor Binding Sites, DNase-I hypersensitive sites, and Histone Modifications using only DNA sequences as input.
 
 ![model image](chromDL_vis.png)
 
