@@ -13,7 +13,7 @@ if len(sys.argv) == 3:
 	num_epochs = int(sys.argv[2])
 else:
 	batchsize = 500
-	num_epochs = 100
+	num_epochs = 20
 
 # Load test file
 savedir = "train_out"
