@@ -20,6 +20,8 @@ Also included in the container file for other file processing were:
 - Tensorflow Addons (version 0.12.1)
 - Matplotlib (version 3.3.4)
 
+ChromDL was trained for 20 epochs, with each epoch took ~16 hours on a single core NVIDIA Tesla K80 GPU processor with 24 GB RAM.
+
 ## Usage
 ### Data
 The ChIP-seq and DNase-seq data that this model was trained on can be found in DeepSEA's codebase, <http://deepsea.princeton.edu/media/code/deepsea_train_bundle.v0.9.tar.gz>.
