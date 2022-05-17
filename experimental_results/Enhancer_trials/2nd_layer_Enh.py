@@ -62,7 +62,6 @@ enh_model = tf.keras.models.Sequential([
 			tf.keras.layers.Convolution1D(64, 9, activation='relu', input_shape=(919,1), kernel_regularizer=tf.keras.regularizers.l1_l2(l1=1e-4, l2=1e-3), kernel_constraint=max_norm(1)),
 			tf.keras.layers.BatchNormalization(),
 			tf.keras.layers.LeakyReLU(0),
-			tf.keras.layers.LeakyReLU(0),
 			tf.keras.layers.MaxPooling1D(9, 3),
 			tf.keras.layers.Dropout(0.2),
 			tf.keras.layers.Convolution1D(128, 4, activation='relu', kernel_regularizer=tf.keras.regularizers.l1_l2(l1=1e-4, l2=1e-3), kernel_constraint=max_norm(1)),
