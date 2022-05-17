@@ -58,22 +58,24 @@ valid_input = validProbs[:, :, np.newaxis]
 print("New inputs Loaded")
 
 # Enhancer model definition
-enh_model = tf.keras.models.Sequential()
-enh_model.add(tf.keras.layers.Convolution1D(64, 9, activation='relu', input_shape=(919,1), kernel_regularizer=tf.keras.regularizers.l1_l2(l1=1e-4, l2=1e-3), kernel_constraint=max_norm(1)))
-enh_model.add(tf.keras.layers.BatchNormalization())
-enh_model.add(tf.keras.layers.LeakyReLU(0))
-enh_model.add(tf.keras.layers.MaxPooling1D(9, 3))
-enh_model.add(tf.keras.layers.Dropout(0.2))
-enh_model.add(tf.keras.layers.Convolution1D(128, 4, activation='relu', kernel_regularizer=tf.keras.regularizers.l1_l2(l1=1e-4, l2=1e-3), kernel_constraint=max_norm(1)))
-enh_model.add(tf.keras.layers.LeakyReLU(0))
-enh_model.add(tf.keras.layers.MaxPooling1D(4, 2))
-enh_model.add(tf.keras.layers.Dropout(0.2))
-enh_model.add(tf.keras.layers.Convolution1D(256, 4, activation='relu', kernel_regularizer=tf.keras.regularizers.l1_l2(l1=1e-4, l2=1e-3),kernel_constraint=max_norm(1)))
-enh_model.add(tf.keras.layers.MaxPooling1D(4, 3))
-enh_model.add(tf.keras.layers.Dropout(0.5))
-enh_model.add(tf.keras.layers.Flatten())
-enh_model.add(tf.keras.layers.Dense(180, activation='relu'))
-enh_model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
+enh_model = tf.keras.models.Sequential([
+			tf.keras.layers.Convolution1D(64, 9, activation='relu', input_shape=(919,1), kernel_regularizer=tf.keras.regularizers.l1_l2(l1=1e-4, l2=1e-3), kernel_constraint=max_norm(1)),
+			tf.keras.layers.BatchNormalization(),
+			tf.keras.layers.LeakyReLU(0),
+			tf.keras.layers.LeakyReLU(0),
+			tf.keras.layers.MaxPooling1D(9, 3),
+			tf.keras.layers.Dropout(0.2),
+			tf.keras.layers.Convolution1D(128, 4, activation='relu', kernel_regularizer=tf.keras.regularizers.l1_l2(l1=1e-4, l2=1e-3), kernel_constraint=max_norm(1)),
+			tf.keras.layers.LeakyReLU(0),
+			tf.keras.layers.MaxPooling1D(4, 2),
+			tf.keras.layers.Dropout(0.2),
+			tf.keras.layers.Convolution1D(256, 4, activation='relu', kernel_regularizer=tf.keras.regularizers.l1_l2(l1=1e-4, l2=1e-3),kernel_constraint=max_norm(1)),
+			tf.keras.layers.MaxPooling1D(4, 3),
+			tf.keras.layers.Dropout(0.5),
+			tf.keras.layers.Flatten(),
+			tf.keras.layers.Dense(180, activation='relu'),
+			tf.keras.layers.Dense(1, activation='sigmoid')
+])
 
 enh_model.compile(loss='binary_crossentropy', optimizer='ADAM', metrics=['accuracy'])
 
