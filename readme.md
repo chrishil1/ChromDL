@@ -38,7 +38,7 @@ https://drive.google.com/drive/folders/1vWxdDRbn3v4oit5D9RiMxiR-vopYnj6w?usp=sha
 ### Training ChromDL
 `python ChromDL_train.py`
 
-ChromDL_train.py will train the model for the 100 epochs using a batch size of 500 and save results to `train_out/ChromDL_train_out.txt`, and the weights from the training to `train_out/ChromDL_learned_weights`
+ChromDL_train.py will train the model for the 20 epochs using a batch size of 500 and save results to `train_out/ChromDL_train_out.txt`, and the weights from the training to `train_out/ChromDL_learned_weights`
 
 Or, the user can input the number of epochs or change the batch size and run:
 
