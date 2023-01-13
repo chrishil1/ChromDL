@@ -1,0 +1,12 @@
+EP300 files
+H1 conservative IDR thresholded peaks	https://www.encodeproject.org/files/ENCFF087TMV/@@download/ENCFF087TMV.bed.gz
+H1 optimal IDR thresholded peaks	https://www.encodeproject.org/files/ENCFF843SYD/@@download/ENCFF843SYD.bed.gz
+HeLa-S3 conservative IDR thresholded peaks	https://www.encodeproject.org/files/ENCFF583XDA/@@download/ENCFF583XDA.bed.gz
+HeLa-S3 optimal IDR thresholded peaks	https://www.encodeproject.org/files/ENCFF784YVX/@@download/ENCFF784YVX.bed.gz
+HepG2 conservative IDR thresholded peaks	https://www.encodeproject.org/files/ENCFF054JWD/@@download/ENCFF054JWD.bed.gz
+HepG2 optimal IDR thresholded peaks	https://www.encodeproject.org/files/ENCFF259JWD/@@download/ENCFF259JWD.bed.gz
+K562 conservative IDR thresholded peaks	https://www.encodeproject.org/files/ENCFF821GNB/@@download/ENCFF821GNB.bed.gz
+K562 optimal IDR thresholded peaks	https://www.encodeproject.org/files/ENCFF549TYR/@@download/ENCFF549TYR.bed.gz
+GM12878 conservative IDR thresholded peaks	https://www.encodeproject.org/files/ENCFF476RII/@@download/ENCFF476RII.bed.gz
+GM12878 optimal IDR thresholded peaks	https://www.encodeproject.org/files/ENCFF222XPQ/@@download/ENCFF222XPQ.bed.gz
+A549 optimal IDR thresholded peaks	https://www.encodeproject.org/files/ENCFF227EUK/@@download/ENCFF227EUK.bed.gz
