@@ -1,4 +1,4 @@
-3% - Ttest	Comparison Model					
+3%_Ttest	Comparison Model					
 	DeepSEA 		DanQ		DanQ-JASPAR	
 Bin	T-test	P-value	T-test	P-value	T-test	P-value
 0-10%	-8.1530773	7.90E-16	-6.3276135	3.36E-10	-4.9962495	6.59E-07
@@ -12,7 +12,7 @@ Bin	T-test	P-value	T-test	P-value	T-test	P-value
 80-90%	-6.3759487	2.48E-10	-6.6762581	3.55E-11	-5.5889469	2.75E-08
 90-100%	-6.1561746	9.77E-10	-6.7621986	2.01E-11	-5.3216468	1.20E-07
 						
-5% - Ttest	Comparison Model					
+5%_Ttest	Comparison Model					
 	DeepSEA 		DanQ		DanQ-JASPAR	
 Bin	T-test	P-value	T-test	P-value	T-test	P-value
 0-10%	-8.1652124	7.18E-16	-6.8428256	1.16E-11	-5.2912172	1.41E-07
@@ -26,7 +26,7 @@ Bin	T-test	P-value	T-test	P-value	T-test	P-value
 80-90%	-5.635925	2.11E-08	-6.3053207	3.87E-10	-4.9235979	9.53E-07
 90-100%	-5.5641251	3.16E-08	-6.3029066	3.93E-10	-4.4592625	8.90E-06
 						
-10% - Ttest	Comparison Model					
+10%_Ttest	Comparison Model					
 	DeepSEA 		DanQ		DanQ-JASPAR	
 Bin	T-test	P-value	T-test	P-value	T-test	P-value
 0-10%	-7.3376966	3.70E-13	-6.3272608	3.37E-10	-4.822893	1.57E-06
