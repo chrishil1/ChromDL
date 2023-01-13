@@ -1,7 +1,7 @@
 # ChromDL: A Next-Generation Regulatory DNA Classifier
 ChromDL is a hybrid neural network comprised of bidirectional gated recurrent Units (biGRUs), separable and traditional convolutional neural networks (CNNs), and bidirectional long short-term memory units (biLSTMs) for the prediction of Transcription Factor Binding Sites, DNase-I hypersensitive sites, and Histone Modifications using only DNA sequences as input.
 
-![model image](chromDL_vis.png)
+![model image](ChromDL_vis.png)
 
 ## Requirements
 ChromDL was trained and run on the Biowulf HPC Cluster hosted by the National Institutes of Health. To do so, a .sif container file was created that included all required packages and can be found in the container definition file. The docker image was compiled from the Nvidia CUDA 11.0 toolkit including cuDNN version 8 for Ubuntu 18.04. Packages can also be installed locally or run on Google Colab GPU instances.
