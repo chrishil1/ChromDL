@@ -7,8 +7,9 @@ from sklearn.metrics import average_precision_score
 import sys
 import os
 
+# Choose weight file
 if len(sys.argv) == 2:
-	weight_file = int(sys.argv[1])
+	weight_file = str(sys.argv[1])
 else:
 	weight_file = "ChromDL_best_weights"
 
@@ -20,6 +21,8 @@ except OSError:
     pass
 
 output = open(savedir + "/ChromDL_test_metrics.txt", "w")
+
+# Initialize parameters
 batchsize = 500
 l1_reg = 1e-8
 l2_reg = 5e-7
@@ -49,7 +52,6 @@ model = tf.keras.models.Sequential([
 # Load best model weights and calculate predictions
 model.load_weights(weight_file + "/variables/variables")
 model.compile(loss='binary_crossentropy', optimizer='ADAM', metrics=['accuracy'])
-print("Testing model...", model.evaluate(test_data, testLabelMatrix, batch_size=batchsize, verbose=2))
 predProbs = model.predict(test_data, batch_size=batchsize, verbose=2)
 
 # Save predictions to file
@@ -58,42 +60,37 @@ f.create_dataset("pred", data=predProbs)
 f.close()
 
 # Calculate auROC/auPRC metrics
-aucs = np.zeros(noutputs, dtype=np.float)
-auprcs = np.zeros(noutputs, dtype=np.float)
+aucs = np.zeros(noutputs, dtype=float)
+auprcs = np.zeros(noutputs, dtype=float)
 for i in range(noutputs):
         try:
-            auc = roc_auc_score(testLabelMatrix[:, i], predProbs[:, i])
-            aucs[i] = auc
-            aup = average_precision_score(testLabelMatrix[:, i], predProbs[:, i])
-            auprcs[i] = aup
+            aucs[i] = roc_auc_score(testLabelMatrix[:, i], predProbs[:, i])
+            auprcs[i] = average_precision_score(testLabelMatrix[:, i], predProbs[:, i])
         except ValueError:
             pass
 
-histauc, histauprc = aucs[125 + 690:125 + 690 + 104], auprcs[125 + 690:125 + 690 + 104]
+histauc, histauprc = aucs[815:], auprcs[815:]
 dnauc, dnauprc = aucs[:125], auprcs[:125]
-tfauc, tfauprc = aucs[125:125 + 690], auprcs[125:125 + 690]
+tfauc, tfauprc = aucs[125:815], auprcs[125:815]
 
-output.write("auROC list:\n")
-output.write(str(list(aucs)))
-output.write("\n")
-output.write("auPRC list:\n")
-output.write(str(list(auprcs)))
-output.write("\n")
+# Print results of testing
+output.write(f"auROC list:\n{str(list(aucs))}\n")
+output.write(f"auPRC list:\n{str(list(auprcs))}\n\n")
 
-output.write("\n")
-output.write('Transcription factors (' + str(len(tfauc)) + ") samples:\n")
-output.write(' - Mean AUC: ' + str(np.nanmean(tfauc)) + "\n")
-output.write(' - Mean AUPRC: ' + str(np.nanmean(tfauprc)) + "\n")
+output.write(f"Transcription factors ({str(len(tfauc))}) samples:\n")
+output.write(f" - Mean AUC: {str(np.nanmean(tfauc))}\n")
+output.write(f" - Mean AUPRC: {str(np.nanmean(tfauprc))}\n")
 
-output.write('DNase I-hypersensitive sites (' + str(len(dnauc)) + ") samples:\n")
-output.write(' - Mean AUC: ' + str(np.nanmean(dnauc)) + "\n")
-output.write(' - Mean AUPRC: ' + str(np.nanmean(dnauprc)) + "\n")
+output.write(f"DNase I-hypersensitive sites ({str(len(dnauc))}) samples:\n")
+output.write(f" - Mean AUC: {str(np.nanmean(dnauc))}\n")
+output.write(f" - Mean AUPRC: {str(np.nanmean(dnauprc))}\n")
 
-output.write('Histone marks: (' + str(len(histauc)) + ") samples:\n")
-output.write(' - Mean AUC: ' + str(np.nanmean(histauc)) + "\n")
-output.write(' - Mean AUPRC: ' + str(np.nanmean(histauprc)) + "\n")
+output.write(f"Histone marks: ({str(len(histauc))}) samples:\n")
+output.write(f" - Mean AUC: {str(np.nanmean(histauc))}\n")
+output.write(f" - Mean AUPRC: {str(np.nanmean(histauprc))}\n")
 
-output.write('Overall: (' + str(len(tfauc) + len(dnauc) + len(histauc)) + ") samples:\n")
-output.write(' - Mean AUC: ' + str(np.nanmean(aucs)) + "\n")
-output.write(' - Mean AUPRC: ' + str(np.nanmean(auprcs)) + "\n")
+output.write(f"Overall: ({str(len(tfauc) + len(dnauc) + len(histauc))}) samples:\n")
+output.write(f" - Mean AUC: {str(np.nanmean(aucs))}\n")
+output.write(f" - Mean AUPRC: {str(np.nanmean(auprcs))}\n")
+
 output.close()
