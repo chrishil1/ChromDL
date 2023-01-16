@@ -42,7 +42,7 @@ chromDL = tf.keras.models.Sequential([
 ])
 
 chromDL.compile(loss='binary_crossentropy', optimizer='ADAM', metrics=['accuracy'])
-chromDL.load_weights("BM1_fin/variables/variables")
+chromDL.load_weights("ChromDL_best_weights/variables/variables")
 
 # Feed datasets through ChromDL first
 trainProbs = chromDL.predict(train_data, batch_size=batchsize, verbose=1)
