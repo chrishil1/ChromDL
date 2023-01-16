@@ -13,19 +13,17 @@ if len(sys.argv) == 3:
 	num_epochs = int(sys.argv[2])
 else:
 	batchsize = 500
-	num_epochs = 20
+	num_epochs = 100
 
-# Load test file
+# Create output directory
 savedir = "train_out"
 try:
     os.mkdir(savedir)
 except OSError:
     pass
 
+# Parameter Initialization
 eval_results = savedir + "/ChromDL_train_out.txt"
-output = open(eval_results, "w")
-
-batchsize = 500
 l1_reg = 1e-8
 l2_reg = 5e-7
 noutputs = 919
@@ -69,25 +67,14 @@ model = tf.keras.models.Sequential([
 filepath = savedir + "/ChromDL_learned_weights"
 model.compile(loss='binary_crossentropy', optimizer='ADAM', metrics=['accuracy'])
 
-# Uncomment this line if loading previously trained weights
+### Uncomment this line if loading previously trained weights ###
 # model.load_weights("ChromDL_train_out/ChromDL_learned_weights/variables/variables")
+
 checkpointer = tf.keras.callbacks.ModelCheckpoint(filepath=filepath, verbose=1, save_best_only=True)
 earlystopper = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=500, verbose=2)
 history = model.fit(train_data, trainLabelMatrix, epochs=num_epochs, batch_size=batchsize, shuffle=True, validation_data=(valid_data, validLabelMatrix), callbacks=[checkpointer, earlystopper], verbose=2)
 
-# Save training metrics to file
-output.write("Loss\n")
-output.write(str(history.history['loss']) + "\n")
-output.write("Validation Loss\n")
-output.write(str(history.history['val_loss']) + "\n")
-output.write("Accuracy\n")
-output.write(str(history.history['accuracy']) + "\n")
-output.write("Validation Accuracy\n")
-output.write(str(history.history['val_accuracy']) + "\n")
-output.write("\n")
-
 # Calculate predictions
-print("Testing model...", model.evaluate(test_data, testLabelMatrix, batch_size=batchsize, verbose=2))   ### used trained model to the test dataset
 predProbs = model.predict(test_data, batch_size=batchsize, verbose=2)   ### get the probability for each testing sequences
 
 # Save predictions to file
@@ -96,42 +83,44 @@ f.create_dataset("pred", data=predProbs)
 f.close()
 
 # Calculate auROC/auPRC metrics
-aucs = np.zeros(noutputs, dtype=np.float)
-auprcs = np.zeros(noutputs, dtype=np.float)
+aucs = np.zeros(noutputs, dtype=float)
+auprcs = np.zeros(noutputs, dtype=float)
 for i in range(noutputs):
         try:
-            auc = roc_auc_score(testLabelMatrix[:, i], predProbs[:, i])
-            aucs[i] = auc
-            aup = average_precision_score(testLabelMatrix[:, i], predProbs[:, i])
-            auprcs[i] = aup
+		aucs[i] = roc_auc_score(testLabelMatrix[:, i], predProbs[:, i])
+        	auprcs[i] = average_precision_score(testLabelMatrix[:, i], predProbs[:, i])
         except ValueError:
             pass
 
-histauc, histauprc = aucs[125 + 690:125 + 690 + 104], auprcs[125 + 690:125 + 690 + 104]
+histauc, histauprc = aucs[815:], auprcs[815:]
 dnauc, dnauprc = aucs[:125], auprcs[:125]
-tfauc, tfauprcs = aucs[125:125 + 690], auprcs[125:125 + 690]
+tfauc, tfauprc = aucs[125:815], auprcs[125:815]
 
-output.write("auROC list:\n")
-output.write(str(list(aucs)))
-output.write("\n")
-output.write("auPRC list:\n")
-output.write(str(list(auprcs)))
-output.write("\n")
+# Save training metrics to file
+output = open(eval_results, "w")
+output.write(f"Loss:\n{str(history.history['loss'])}\n")
+output.write(f"Validation Loss:\n{str(history.history['val_loss'])}\n")
+output.write(f"Accuracy:\n{str(history.history['accuracy'])}\n")
+output.write(f"Validation Accuracy:\n{str(history.history['val_accuracy'])}\n\n")
 
-output.write("\n")
-output.write('Transcription factors (' + str(len(tfauc)) + ") samples:\n")
-output.write(' - Mean AUC: ' + str(np.nanmean(tfauc)) + "\n")
-output.write(' - Mean AUPRC: ' + str(np.nanmean(tfauprcs)) + "\n")
+# Print results of testing
+output.write(f"auROC list:\n{str(list(aucs))}\n")
+output.write(f"auPRC list:\n{str(list(auprcs))}\n\n")
 
-output.write('DNase I-hypersensitive sites (' + str(len(dnauc)) + ") samples:\n")
-output.write(' - Mean AUC: ' + str(np.nanmean(dnauc)) + "\n")
-output.write(' - Mean AUPRC: ' + str(np.nanmean(dnauprc)) + "\n")
+output.write(f"Transcription factors ({str(len(tfauc))}) samples:\n")
+output.write(f" - Mean AUC: {str(np.nanmean(tfauc))}\n")
+output.write(f" - Mean AUPRC: {str(np.nanmean(tfauprc))}\n")
 
-output.write('Histone marks: (' + str(len(histauc)) + ") samples:\n")
-output.write(' - Mean AUC: ' + str(np.nanmean(histauc)) + "\n")
-output.write(' - Mean AUPRC: ' + str(np.nanmean(histauprc)) + "\n")
+output.write(f"DNase I-hypersensitive sites ({str(len(dnauc))}) samples:\n")
+output.write(f" - Mean AUC: {str(np.nanmean(dnauc))}\n")
+output.write(f" - Mean AUPRC: {str(np.nanmean(dnauprc))}\n")
 
-output.write('Overall: (' + str(len(tfauc) + len(dnauc) + len(histauc)) + ") samples:\n")
-output.write(' - Mean AUC: ' + str(np.nanmean(aucs)) + "\n")
-output.write(' - Mean AUPRC: ' + str(np.nanmean(auprcs)) + "\n")
+output.write(f"Histone marks: ({str(len(histauc))}) samples:\n")
+output.write(f" - Mean AUC: {str(np.nanmean(histauc))}\n")
+output.write(f" - Mean AUPRC: {str(np.nanmean(histauprc))}\n")
+
+output.write(f"Overall: ({str(len(tfauc) + len(dnauc) + len(histauc))}) samples:\n")
+output.write(f" - Mean AUC: {str(np.nanmean(aucs))}\n")
+output.write(f" - Mean AUPRC: {str(np.nanmean(auprcs))}\n")
+
 output.close()
