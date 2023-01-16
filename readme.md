@@ -1,5 +1,5 @@
 # ChromDL: A Next-Generation Regulatory DNA Classifier
-ChromDL is a hybrid neural network comprised of bidirectional gated recurrent Units (biGRUs), separable and traditional convolutional neural networks (CNNs), and bidirectional long short-term memory units (biLSTMs) for the prediction of Transcription Factor Binding Sites, DNase-I hypersensitive sites, and Histone Modifications using only DNA sequences as input.
+ChromDL is a hybrid neural network comprised of bidirectional gated recurrent Units (BiGRUs), separable and traditional convolutional neural networks (CNNs), and bidirectional long short-term memory units (BiLSTMs) for the prediction of Transcription Factor Binding Sites, DNase-I hypersensitive sites, and Histone Modifications using only DNA sequences as input.
 
 ![model image](ChromDL_vis.png)
 
@@ -22,11 +22,13 @@ Also included in the container file for other file processing were:
 
 ChromDL was trained for 20 epochs, with each epoch taking ~16 hours on a single core NVIDIA Tesla K80 GPU processor with 24 GB RAM.
 
+ChromDL can also be run out of the box on a Google Colaboratory GPU, where ChromDL_test.py can be run using a standard GPU runtime, and ChromDL_train.py using a high RAM premium GPU runtime.
+
 ## Usage
 ### Data
 The ChIP-seq and DNase-seq data that this model was trained on can be found in DeepSEA's codebase, <http://deepsea.princeton.edu/media/code/deepsea_train_bundle.v0.9.tar.gz>.
 
-The individual links for each of the 919 chromatin features labels can be found in `data/data_sources/DeepSEA_data_sources.txt`, and the other data sources used in the experimentation and validation of the model can be found in `data/data_sources/other_data_sources.txt`
+The individual links for each of the 919 chromatin features labels can be found in `data/data_sources/DeepSEA_data_sources.txt`, and the other data sources used in the enhancer and raQTL experimentation and validation of the model can be found in `data/data_sources/`
 
 ### Container file
 The container.sif used as the docker image for training and testing ChromDL can be downloaded from: https://drive.google.com/uc?id=1LHVtgATsO4n4WYCFdw46goFgjibCrjip&export=download
@@ -38,7 +40,7 @@ https://drive.google.com/drive/folders/1vWxdDRbn3v4oit5D9RiMxiR-vopYnj6w?usp=sha
 ### Training ChromDL
 `python ChromDL_train.py`
 
-ChromDL_train.py will train the model for the 20 epochs using a batch size of 500 and save results to `train_out/ChromDL_train_out.txt`, and the weights from the training to `train_out/ChromDL_learned_weights`
+ChromDL_train.py will train the model for the 100 epochs using a batch size of 500 and save results to `train_out/ChromDL_train_out.txt`, and the weights from the training to `train_out/ChromDL_learned_weights`
 
 Or, the user can input the number of epochs or change the batch size and run:
 
@@ -54,6 +56,8 @@ ChromDL_test.py will run the fully trained model loaded from `ChromDL_best_weigh
 `python ChromDL_test.py <weight file>`
 
 Where the weight file will be the `ChromDL_learned_weights` from training.
+
+There is also a ChromDL_test.ipynb interactive notebook that can be run on google Colaboratory using the free GPU runtime and the testing dataset.
 
 ## Contact information
 For help or issues using ChromDL, please contact chrishil@umich.edu.
