@@ -75,7 +75,7 @@ earlystopper = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=500
 history = model.fit(train_data, trainLabelMatrix, epochs=num_epochs, batch_size=batchsize, shuffle=True, validation_data=(valid_data, validLabelMatrix), callbacks=[checkpointer, earlystopper], verbose=2)
 
 # Calculate predictions
-predProbs = model.predict(test_data, batch_size=batchsize, verbose=2)   ### get the probability for each testing sequences
+predProbs = model.predict(test_data, batch_size=batchsize, verbose=2)
 
 # Save predictions to file
 f = h5py.File(savedir + "/predProbs.hdf5", "w")
