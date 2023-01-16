@@ -4,7 +4,7 @@ ChromDL is a hybrid neural network comprised of bidirectional gated recurrent Un
 ![model image](ChromDL_vis.png)
 
 ## Requirements
-ChromDL was trained and run on the Biowulf HPC Cluster hosted by the National Institutes of Health. To do so, a .sif container file was created that included all required packages and can be found in the container definition file. The docker image was compiled from the Nvidia CUDA 11.0 toolkit including cuDNN version 8 for Ubuntu 18.04. Packages can also be installed locally or run on Google Colab GPU instances.
+ChromDL was trained and run on the Biowulf HPC Cluster hosted by the National Institutes of Health. To do so, a .sif container file was created that included all required packages and can be found in the container definition file. The docker image was compiled from the Nvidia CUDA 11.0 toolkit including cuDNN version 8 for Ubuntu 18.04. 
 
 Included in this container are the following:
 - Python (version 3.7.5)
@@ -22,7 +22,7 @@ Also included in the container file for other file processing were:
 
 ChromDL was trained for 100 epochs, with each epoch taking ~16 hours on a single core NVIDIA Tesla K80 GPU processor with 24 GB RAM.
 
-ChromDL can also be run out of the box on a Google Colaboratory GPU, where `ChromDL_test.py` can be run using a standard GPU runtime, and `ChromDL_train.py` using a high RAM premium GPU runtime.
+ChromDL can also be run out of the box locally or on a Google Colaboratory GPU, where `ChromDL_test.py` can be run using a standard GPU runtime, and `ChromDL_train.py` using a high RAM premium GPU runtime.
 
 ## Usage
 ### Data
