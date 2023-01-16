@@ -61,4 +61,4 @@ The fully trained ChromDL weight files can be downloaded from:
 https://drive.google.com/drive/folders/1vWxdDRbn3v4oit5D9RiMxiR-vopYnj6w?usp=sharing
 
 ## Contact information
-For help or issues using ChromDL, please contact chrishil@umich.edu.
+For assistance or issues with ChromDL, please contact chrishil@umich.edu.
