@@ -25,18 +25,6 @@ ChromDL was trained for 100 epochs but stagnanted after 20 epochs, with each epo
 ChromDL can also be run out of the box locally or on a Google Colaboratory GPU, where `ChromDL_test.py` can be run using a standard GPU runtime, and `ChromDL_train.py` using a high-RAM premium GPU runtime.
 
 ## Usage
-### Data
-The ChIP-seq and DNase-seq data that this model was trained on can be found in DeepSEA's codebase, <http://deepsea.princeton.edu/media/code/deepsea_train_bundle.v0.9.tar.gz>.
-
-The individual links for each of the 919 chromatin features labels can be found in `data/data_sources/DeepSEA_data_sources.txt`, and the other data sources used in the enhancer and raQTL experimentation and validation of the model can be found in `data/data_sources/`
-
-### Container file
-The container.sif used as the docker image for training and testing ChromDL can be downloaded from: https://drive.google.com/uc?id=1LHVtgATsO4n4WYCFdw46goFgjibCrjip&export=download
-
-### Weight files
-The fully trained ChromDL weight files can be downloaded from:
-https://drive.google.com/drive/folders/1vWxdDRbn3v4oit5D9RiMxiR-vopYnj6w?usp=sharing
-
 ### Training ChromDL
 `python ChromDL_train.py`
 
@@ -58,6 +46,19 @@ ChromDL_test.py will run the fully trained model loaded from `ChromDL_best_weigh
 Where the weight file will be the `ChromDL_learned_weights` from training.
 
 There is also a ChromDL_test.ipynb interactive notebook that can be run on google Colaboratory using the free GPU runtime and the testing dataset.
+
+## Associated Files
+### Data
+The ChIP-seq and DNase-seq data that this model was trained on can be found in DeepSEA's codebase, <http://deepsea.princeton.edu/media/code/deepsea_train_bundle.v0.9.tar.gz>.
+
+The individual links for each of the 919 chromatin features labels can be found in `data/data_sources/DeepSEA_data_sources.txt`, and the other data sources used in the enhancer and raQTL experimentation and validation of the model can be found in `data/data_sources/`
+
+### Container file
+The container.sif used as the docker image for training and testing ChromDL can be downloaded from: https://drive.google.com/uc?id=1LHVtgATsO4n4WYCFdw46goFgjibCrjip&export=download
+
+### Weight files
+The fully trained ChromDL weight files can be downloaded from:
+https://drive.google.com/drive/folders/1vWxdDRbn3v4oit5D9RiMxiR-vopYnj6w?usp=sharing
 
 ## Contact information
 For help or issues using ChromDL, please contact chrishil@umich.edu.
