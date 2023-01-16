@@ -22,7 +22,7 @@ Also included in the container file for other file processing were:
 
 ChromDL was trained for 100 epochs, with each epoch taking ~16 hours on a single core NVIDIA Tesla K80 GPU processor with 24 GB RAM.
 
-ChromDL can also be run out of the box on a Google Colaboratory GPU, where ChromDL_test.py can be run using a standard GPU runtime, and ChromDL_train.py using a high RAM premium GPU runtime.
+ChromDL can also be run out of the box on a Google Colaboratory GPU, where `ChromDL_test.py` can be run using a standard GPU runtime, and `ChromDL_train.py` using a high RAM premium GPU runtime.
 
 ## Usage
 ### Data
