@@ -91,10 +91,8 @@ predProbs = enh_model.predict(test_input, batch_size=batchsize, verbose=2)
 
 # Calculate performance metrics
 auc = roc_auc_score(testLabelMatrix[:], predProbs[:])
-aup = average_precision_score(testLabelMatrix[:], predProbs[:])
+auprc = average_precision_score(testLabelMatrix[:], predProbs[:])
 
-print("Cell line: " + filename[:4])
-print("AUC")
-print(auc)
-print("AUPRC")
-print(aup)
+print(f"Cell line: {filename[:4]}")
+print(f"AUC: {auc}")
+print(f"AUPRC: {auprc}")
