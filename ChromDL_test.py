@@ -73,7 +73,7 @@ histauc, histauprc = aucs[815:], auprcs[815:]
 dnauc, dnauprc = aucs[:125], auprcs[:125]
 tfauc, tfauprc = aucs[125:815], auprcs[125:815]
 
-# Print results of testing
+# Save testing results
 output.write(f"auROC list:\n{str(list(aucs))}\n")
 output.write(f"auPRC list:\n{str(list(auprcs))}\n\n")
 
