@@ -90,7 +90,7 @@ for i in range(noutputs):
 		aucs[i] = roc_auc_score(testLabelMatrix[:, i], predProbs[:, i])
         	auprcs[i] = average_precision_score(testLabelMatrix[:, i], predProbs[:, i])
         except ValueError:
-            pass
+		pass
 
 histauc, histauprc = aucs[815:], auprcs[815:]
 dnauc, dnauprc = aucs[:125], auprcs[:125]
