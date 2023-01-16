@@ -45,7 +45,7 @@ ChromDL_test.py will run the fully trained model loaded from `ChromDL_best_weigh
 
 Where the weight file will be the `ChromDL_learned_weights` from training.
 
-There is also a ChromDL_test.ipynb interactive notebook that can be run on google Colaboratory using the free GPU runtime and the testing dataset.
+There is also a `ChromDL_test.ipynb` interactive notebook that can be run on Google Colaboratory using the free GPU runtime and the testing dataset in  ~8-10 minutes.
 
 ## Associated Files
 ### Data
