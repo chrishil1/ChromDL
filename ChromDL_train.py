@@ -103,7 +103,7 @@ output.write(f"Validation Loss:\n{str(history.history['val_loss'])}\n")
 output.write(f"Accuracy:\n{str(history.history['accuracy'])}\n")
 output.write(f"Validation Accuracy:\n{str(history.history['val_accuracy'])}\n\n")
 
-# Print results of testing
+# Save testing metrics
 output.write(f"auROC list:\n{str(list(aucs))}\n")
 output.write(f"auPRC list:\n{str(list(auprcs))}\n\n")
 
