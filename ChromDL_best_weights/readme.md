@@ -2,5 +2,5 @@ Weight files for the trained ChromDL model can be downloaded from: https://drive
 
 Download and place the following files in this folder before running ChromDL_test.py:
 
-    - variables (Directory)
-    - saved_model.pb
+     variables (Directory)
+     saved_model.pb
