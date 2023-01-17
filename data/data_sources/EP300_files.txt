@@ -1,4 +1,4 @@
-EP300 files
+The 11 downloaded EP300 files used to create the optimal IDR thresholded peak and conservative IDR thresholded peak enhancer definitions
 H1 conservative IDR thresholded peaks	https://www.encodeproject.org/files/ENCFF087TMV/@@download/ENCFF087TMV.bed.gz
 H1 optimal IDR thresholded peaks	https://www.encodeproject.org/files/ENCFF843SYD/@@download/ENCFF843SYD.bed.gz
 HeLa-S3 conservative IDR thresholded peaks	https://www.encodeproject.org/files/ENCFF583XDA/@@download/ENCFF583XDA.bed.gz
