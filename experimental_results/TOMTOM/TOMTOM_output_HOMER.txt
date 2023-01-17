@@ -1,3 +1,5 @@
+TOMTOM metrics when mapping de novo generated motifs of ChromDL, DeepSEA, DanQ, and DanQ-JASPAR using HOMER to published Protein Binding Microarray position weight matrices.
+
 Cell_line	Query_ID	Optimal_offset	p-value	E-value	q-value	Overlap	Query_consensus	Target_consensus	Orientation
 H1-hESC_c-Jun	DeepSEA	2	4.68E-08	4.68E-08	9.35E-08	10	ATGACTCATC	GGATGACTCATTCC	-
 	ChromDL	3	1.07E-07	1.07E-07	2.13E-07	10	GTGAGTCATC	GGAATGAGTCATCC	+
