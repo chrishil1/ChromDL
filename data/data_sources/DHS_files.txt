@@ -1,4 +1,4 @@
-DHS files
+The 53 downloaded files of DNase I hypersensitivite sites (DHSs) used to create all enhancer definitions for experimental validation
 https://egg2.wustl.edu/roadmap/data/byFileType/peaks/consolidated/narrowPeak/E003-DNase.macs2.narrowPeak.gz
 https://egg2.wustl.edu/roadmap/data/byFileType/peaks/consolidated/narrowPeak/E004-DNase.macs2.narrowPeak.gz
 https://egg2.wustl.edu/roadmap/data/byFileType/peaks/consolidated/narrowPeak/E005-DNase.macs2.narrowPeak.gz
