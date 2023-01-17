@@ -1,3 +1,5 @@
+One sided T-test statistics for ChromDL having a higher proportion of TFBS peaks predicted correctly than the comparison models, 3%, 5%, 10% FPR
+
 3%_Ttest	Comparison Model					
 	DeepSEA 		DanQ		DanQ-JASPAR	
 Bin	T-test	P-value	T-test	P-value	T-test	P-value
