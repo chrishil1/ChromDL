@@ -1,4 +1,4 @@
-ChromHMM files
+The 44 downloaded files used for creating the definition of ChromHMM Strong Enhancer State (S.E.S.) and ChromHMM Weak Enhancer State (W.E.S.) enhancers in experimental validation.
 https://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/core_K27ac/jointModel/final/E003_18_core_K27ac_stateno.bed.gz
 https://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/core_K27ac/jointModel/final/E004_18_core_K27ac_stateno.bed.gz
 https://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/core_K27ac/jointModel/final/E005_18_core_K27ac_stateno.bed.gz
