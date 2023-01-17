@@ -1,3 +1,5 @@
+auROC and auPRC performance metrics for the two-step ChromDL and TREDNet second-phase enhancer classifier across the eight enhancer definitions for 53 cell lines, where data is available
+
 	Enhancer Definition	ChromHMM S.E.S.		ChromHMM W.E.S.		H3K27ac		H3K4me1		H3K27ac + H3K4me1		H3K27ac + H3K4me1 - H3K4me3		EP300 conservative		EP300 optimal	
 Cell line #	Description	auROC	auPRC	auROC	auPRC	auROC	auPRC	auROC	auPRC	auROC	auPRC	auROC	auPRC	auROC	auPRC	auROC	auPRC
 E003	H1-hESC	0.902409566	0.369305616	0.93079972	0.513651455	0.917512035	0.476684443	0.939822006	0.651503158	0.920338937	0.404192574	0.898881731	0.328629716	0.968180445	0.188667775	0.962741211	0.248859781
