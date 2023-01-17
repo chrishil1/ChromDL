@@ -1,4 +1,4 @@
-DeepSEA files
+The 919 downloaded ChIP-Seq files used by ChromDL in the prediction of regulatory features, compiled by DeepSEA authors
 http://hgdownload.cse.ucsc.edu/goldenpath/hg19/encodeDCC/wgEncodeAwgDnaseUniform/wgEncodeAwgDnaseDuke8988tUniPk.narrowPeak.gz
 http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeAwgDnaseUniform/wgEncodeAwgDnaseDukeAosmcUniPk.narrowPeak.gz
 http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeAwgDnaseUniform/wgEncodeAwgDnaseDukeChorionUniPk.narrowPeak.gz
