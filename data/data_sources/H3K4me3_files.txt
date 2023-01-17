@@ -1,4 +1,4 @@
-H3K4me3 files
+The 44 downloaded files used for creating the definition of H3K27ac + H3K4me1 - H3K4me3 peak enhancers in experimental validation
 https://egg2.wustl.edu/roadmap/data/byFileType/peaks/consolidated/narrowPeak/E003-H3K4me3.narrowPeak.gz
 https://egg2.wustl.edu/roadmap/data/byFileType/peaks/consolidated/narrowPeak/E004-H3K4me3.narrowPeak.gz
 https://egg2.wustl.edu/roadmap/data/byFileType/peaks/consolidated/narrowPeak/E005-H3K4me3.narrowPeak.gz
