@@ -1,5 +1,6 @@
-UCSC gene annotation (Promoter file)	https://hgdownload.soe.ucsc.edu/goldenPath/hg19/database/knownGene.txt.gz
+The UCSC gene annotation file used for promoter definitions in experimental validation
+UCSC gene annotation	https://hgdownload.soe.ucsc.edu/goldenPath/hg19/database/knownGene.txt.gz
 	
-raQTL files (Must visit in browser)	
+The HepG2 and K562 source raQTL files from the OSF database used in experimental validation
 HepG2 raQTLs	https://osf.io/56nxe/download
 K562 raQTLs	https://osf.io/qxaj3/download
