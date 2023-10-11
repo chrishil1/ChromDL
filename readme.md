@@ -56,6 +56,8 @@ The individual links for each of the 919 chromatin features labels can be found 
 ### Container file
 The container.sif used as the docker image for training and testing ChromDL can be downloaded from: https://drive.google.com/uc?id=1LHVtgATsO4n4WYCFdw46goFgjibCrjip&export=download
 
+The container.sif file must be instantiated with `python3.6` to initialize correctly.
+
 ### Weight files
 The fully trained ChromDL weight files can be downloaded from:
 https://drive.google.com/drive/folders/1vWxdDRbn3v4oit5D9RiMxiR-vopYnj6w?usp=sharing
